@@ -14,3 +14,16 @@ print(ord('5'))    # 53
 print(ord('A'))    # 65
 print(ord('$'))    # 36
 </pre>
+
+### Enumerate
+This method adds a counter to an iterable and returns it in a form of enumerate object
+<pre>
+lst = ['Barry', 'Allen', 'Flash']
+stg = 'Zoom'
+ 
+objlst = enumerate(lst)
+objstg = enumerate(stg)
+
+print(list(objlst))    # [(0, 'Barry'), (1, 'Allen'), (2, 'Flash')]
+print(list(objstg))    # [(0, 'Z'), (1, 'o'), (2, 'o'), (3, 'm')]
+</pre>
