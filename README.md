@@ -1,8 +1,11 @@
 # Python Fun
 
 ### replace() Method
-Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count <code>str.replace(old, new, count)</code>
-
+Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count --> <code>str.replace(old, new, count)</code>
+<pre>
+def convertTabs(code, x):
+    return code.replace('\t', ''.join([' ' for i in range(x)]))
+</pre>
 
 ### Word Palindrome
 Notice how <code>[::-1]</code> reverses the string `word`
