@@ -1,8 +1,7 @@
 # Python Fun
 
 ### Interesting Methods + Swapping
-<code>n</code> = number
-<code>x</code> = base
+<code>n</code> = number, <code>x</code> = base
 
 * <code>n.bit_length()</code>
 * <code>isinstance(n, int)</code>
