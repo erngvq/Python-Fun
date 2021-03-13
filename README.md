@@ -1,8 +1,7 @@
 # Python Fun
 
 ### replace() Method
-<code>str.replace(old, new[, max])</code>
-Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to max
+Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count <code>str.replace(old, new, count)</code>
 
 
 ### Word Palindrome
