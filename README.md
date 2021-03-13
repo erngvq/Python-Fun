@@ -1,10 +1,13 @@
 # Python Fun
 
 ### Interesting Methods
+<code>n</code> = number
+<code>x</code> = base
+
 * <code>n.bit_length()</code>
-* isinstance(n, int)
-
-
+* <code>isinstance(n, int)</code>
+* <code>hex(int(n, x))[2:]</code>
+* <code>a, b = b, a</code>
 
 ### replace() Method
 Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count &rarr; <code>str.replace(old, new, count)</code>
