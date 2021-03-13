@@ -22,6 +22,7 @@ else:
     print('else executed')
 </pre>
 
+--
 ### <code>replace()</code> Method
 Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count &rarr; <code>str.replace(old, new, count)</code>
 <pre>
