@@ -22,7 +22,7 @@ else:
     print('else executed')
 </pre>
 
---
+---
 ### <code>replace()</code> Method
 Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count &rarr; <code>str.replace(old, new, count)</code>
 <pre>
@@ -30,8 +30,15 @@ def convertTabs(code, x):
     return code.replace('\t', ''.join([' ' for i in range(x)]))
 </pre>
 
+---
 ### Packing/Unpacking
+<pre>
+lst = [1, 2, 3, 4]
+a, *lst, d = lst
+print(a, d, lst)    # 1 4 [2, 3]
+</pre>
 
+---
 ### Word Palindrome
 Notice how <code>[::-1]</code> reverses the string `word`
 <pre>
@@ -39,6 +46,7 @@ def isWordPalindrome(word):
     return word == word[::-1]
 </pre>
 
+---
 ### <code>ord()</code> Function
 The <code>ord()</code> function returns an integer representing the Unicode character (i.e., it is the inverse of the <code>chr()</code> function)
 <pre>
@@ -47,6 +55,7 @@ print(ord('A'))    # 65
 print(ord('$'))    # 36
 </pre>
 
+---
 ### enumerate() Method
 Adds a counter to an iterable and returns it in a form of enumerate object
 <pre>
