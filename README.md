@@ -1,6 +1,6 @@
 # Python Fun
 
-### Interesting Methods
+### Interesting Methods + Swapping
 <code>n</code> = number
 <code>x</code> = base
 
