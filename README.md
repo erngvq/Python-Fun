@@ -30,7 +30,7 @@ print(list(objstg))    # [(0, 'Z'), (1, 'o'), (2, 'o'), (3, 'm')]
 
 ### <code>format()</code> Method
 Formats the specified value(s) and insert them inside the string's placeholder (defined using curly brackets)\
-Inside the placeholders we can add a formatting type to format the results (https://www.w3schools.com/python/ref_string_format.asp)
+Inside the placeholders we can add a formatting type to format the results [https://www.w3schools.com/python/ref_string_format.asp](url){:target="_blank"}
 <pre>
 txt1 = "My name is {fname} and I am {age}.".format(fname='Harry Potter', age=16)
 txt2 = "My favorite professor is {0} and he is probably more than {1} years old.".format('Albus Dumbledore', 100)
