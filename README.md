@@ -1,4 +1,9 @@
-# Python-Fun
+# Python Fun
+
+### replace() Method
+<code>str.replace(old, new[, max])</code>
+Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to max
+
 
 ### Word Palindrome
 Notice how <code>[::-1]</code> reverses the string `word`
