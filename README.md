@@ -1,5 +1,11 @@
 # Python Fun
 
+### Interesting Methods
+* <code>n.bit_length()</code>
+* isinstance(n, int)
+
+
+
 ### replace() Method
 Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count &rarr; <code>str.replace(old, new, count)</code>
 <pre>
