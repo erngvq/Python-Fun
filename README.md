@@ -10,6 +10,7 @@
 * <code>' '.join(s.split())</code>
 * <code>a, b = b, a</code>
 
+---
 ### <code>for-else</code> Loop
 Whatever code is in <code>else</code> clause will execute if the for-loop executes without `breaking`
 <pre>
@@ -58,6 +59,7 @@ print(list(objlst))    # [(0, 'Barry'), (1, 'Allen'), (2, 'Flash')]
 print(list(objstg))    # [(0, 'Z'), (1, 'o'), (2, 'o'), (3, 'm')]
 </pre>
 
+---
 ### <code>format()</code> Method
 Formats the specified value(s) and insert them inside the string's placeholder (defined using curly brackets)\
 Inside the placeholders we can add a <a href="https://www.w3schools.com/python/ref_string_format.asp" target="_blank"><span>formatting type</span></a> to format the results
