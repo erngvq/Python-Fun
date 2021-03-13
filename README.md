@@ -1,19 +1,34 @@
 # Python Fun
 
 ### Interesting Methods + Swapping
-<code>n</code> = number, <code>x</code> = base
+<code>n</code> = number, <code>x</code> = base, <code>s</code> = string
 
 * <code>n.bit_length()</code>
 * <code>isinstance(n, int)</code>
 * <code>hex(int(n, x))[2:]</code>
+* <code>s.capitalilze()</code>
+* <code>' '.join(s.split())</code>
 * <code>a, b = b, a</code>
 
-### replace() Method
+### <code>for-else</code> Loop
+Whatever code is in <code>else</code> clause will execute if the for-loop executes without `breaking`
+<pre>
+for i in range(0, 10, 2):
+    if i % 2 == 1:
+        break
+    print(i)
+else:
+    print('else executed')
+</pre>
+
+### <code>replace()</code> Method
 Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count &rarr; <code>str.replace(old, new, count)</code>
 <pre>
 def convertTabs(code, x):
     return code.replace('\t', ''.join([' ' for i in range(x)]))
 </pre>
+
+### Packing/Unpacking
 
 ### Word Palindrome
 Notice how <code>[::-1]</code> reverses the string `word`
