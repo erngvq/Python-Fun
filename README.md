@@ -95,4 +95,9 @@ When using both <code>for</code> and <code>else</code> in a list comprehension, 
 <pre>
 def twoTeams(students):
     return sum([students[i] if i % 2 == 0 else students[i] * -1 for i in range(len(students))])
+
+# Another version of this problem using slice-step-parameter
+def twoTeams(students):
+    return sum(students[::2]) - sum(students[1::2])
 </pre>
+<a href="https://forum.freecodecamp.org/t/how-to-use-python-slice-with-the-start-stop-and-step-arguments-explained-with-examples/19202" target="_blank"><span>Python Slice Reference</span></a>
