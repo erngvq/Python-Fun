@@ -91,7 +91,7 @@ def listsConcatenation(lst1, lst2):
 
 ---
 ### <code>for-else</code> List Comprehension
-When using both <code>for</code> and <code>else</code> in a list comprehension, the rearrangement changes
+When using both <code>for</code> and <code>else</code> in a list comprehension, the rearrangement changes, as shown in the example below
 <pre>
 def twoTeams(students):
     return sum([students[i] if i % 2 == 0 else students[i] * -1 for i in range(len(students))])
