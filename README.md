@@ -80,10 +80,10 @@ txt3 = 'My best friends are {} and {}.'.format('Hermione Granger', 'Ron Weasley'
 </pre>
 
 ---
-### List Concatenation
+### Lists Concatenation
 The <code>extend()</code> method takes an iterable such as list, tuple, or string, and modifies the original list (it does not return any value)
 <pre>
-def listConcatenation(lst1, lst2):
+def listsConcatenation(lst1, lst2):
     res = lst1
     res.extend(lst2)
     return res
