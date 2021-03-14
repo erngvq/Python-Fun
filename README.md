@@ -101,3 +101,6 @@ def twoTeams(students):
     return sum(students[::2]) - sum(students[1::2])
 </pre>
 <a href="https://forum.freecodecamp.org/t/how-to-use-python-slice-with-the-start-stop-and-step-arguments-explained-with-examples/19202" target="_blank"><span>Python Slice Reference</span></a>
+
+<a onclick="window.open(this.href,'_blank');return false;" href="https://github.com">Some Other Site</a>
+
