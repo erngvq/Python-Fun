@@ -78,3 +78,13 @@ txt1 = 'My name is {fname} and I am {age}.'.format(fname='Harry Potter', age=16)
 txt2 = 'My favorite professor is {0} and he is probably more than {1} years old.'.format('Albus Dumbledore', 100)
 txt3 = 'My best friends are {} and {}.'.format('Hermione Granger', 'Ron Weasley')
 </pre>
+
+---
+### List Concatenation
+The <code>extend()</code> method takes an iterable such as list, tuple, or string, and modifies the original list (it does not return any value)
+<pre>
+def listConcatenation(lst1, lst2):
+    res = lst1
+    res.extend(lst2)
+    return res
+</pre>
