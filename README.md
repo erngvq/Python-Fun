@@ -169,3 +169,29 @@ print(list(zip(team1, team2)))                              # [('Jane', 'Oscar')
 team3 = ['Harry', 'Hermione']
 print(list(zip(team1, team2, team3)))                       # [('Jane', 'Oscar', 'Harry'), ('Bob', 'Lidia', 'Hermione')]
 ```
+
+---
+### Map, Filter, Reduce
+The <code>map()</code> function returns a map object (which is an iterator) of the results after applying the given function to each item of a given iterable
+```python
+# This script strips the last digit of each integer in the given list
+lst = [42, 239, 365, 50]
+def fix(x):
+    return x // 10
+print(list(map(fix, result)))    # returns [4, 23, 36, 5]
+```
+The <code>filter()</code> function filters the given sequence with the help of a function that tests each element in the sequence to be true or not
+```python
+# This script filters out those courses whose lengths are seven
+courses = ['Art', 'Finance', 'Business', 'Speech', 'History', 'Writing', 'Statistics']
+def consider(course):
+    return len(course) < 7
+print(list(filter(consider, courses)))    # returns ['Art', 'Speech']
+```
+The <code>reduce()</code> function is used to apply a particular function (first argument) to all of the list elements in the sequence (second argument)
+```python
+# This script finds the least common denominator for the given list
+from fractions import gcd
+denominators = [2, 3, 4, 5, 6]
+print(functools.reduce(lambda a, b: a * b / gcd(a, b), denominators))    # returns 60
+```
