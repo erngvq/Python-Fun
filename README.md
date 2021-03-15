@@ -112,6 +112,7 @@ del lst[k-1::k]    # deletes every second item in lst
 print(lst)         # [1, 3, 5, 7]
 ```
 
+---
 ### Lambda Functions + Enumerate
 ```python
 def getPoints(answers, p):
