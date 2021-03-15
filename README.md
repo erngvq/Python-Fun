@@ -135,3 +135,11 @@ def sortStudents(students):
 students = ['John Smith', 'Jacky Mon Simonoff', 'Lucy Smith', 'Angela Zimonova']
 print(sortStudents(students))
 ```
+
+---
+### Matrix Initialization
+To declare a multidimensional list of zeroes in Python, it is necessary to use a list comprehension, as shown below
+```python
+m = 3
+matrix = [[0 for i in range(m)] for j in range(m)]
+```
