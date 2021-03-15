@@ -193,5 +193,7 @@ The <code>reduce()</code> function is used to apply a particular function (first
 # This script finds the least common denominator for the given list
 from fractions import gcd
 denominators = [2, 3, 4, 5, 6]
+
+# In order to use reduce(), the functools module must be invoked
 print(functools.reduce(lambda a, b: a * b / gcd(a, b), denominators))    # returns 60
 ```
