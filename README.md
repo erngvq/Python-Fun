@@ -166,6 +166,6 @@ print([[team1[i], team2[i]] for i in range(len(team1))])    # [['Jane', 'Oscar']
 print(list(zip(team1, team2)))                              # [('Jane', 'Oscar'), ('Bob', 'Lidia'), ('Peter', 'Ann')]
 
 # Using zip() powerfully
-team3 = ['Harry', 'Hermione', 'Ron']
-print(list(zip(team1, team2, team3)))                       # [('Jane', 'Oscar', 'Harry'), ('Bob', 'Lidia', 'Hermione'), ('Peter', 'Ann', 'Ron')]
+team3 = ['Harry', 'Hermione']
+print(list(zip(team1, team2, team3)))                       # [('Jane', 'Oscar', 'Harry'), ('Bob', 'Lidia', 'Hermione')]
 ```
