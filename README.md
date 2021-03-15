@@ -143,3 +143,13 @@ To declare a multidimensional list of zeroes in Python, it is necessary to use a
 m = 3
 matrix = [[0 for i in range(m)] for j in range(m)]
 ```
+
+---
+### Weighted Alphabet Dictionary
+```python
+# ASCII value of uppercase alphabets: [65:91)
+# ASCII value of lowercase alphabets: [97:123)
+
+alphabet = dict([(chr(i), i-96) for i in range(97, 123)])
+print(alphabet)
+```
