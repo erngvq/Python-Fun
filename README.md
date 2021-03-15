@@ -101,3 +101,12 @@ def twoTeams(students):
     return sum(students[::2]) - sum(students[1::2])
 </pre>
 <a href="https://forum.freecodecamp.org/t/how-to-use-python-slice-with-the-start-stop-and-step-arguments-explained-with-examples/19202" target="_blank"><span>Python Slice Reference</span></a>
+
+---
+### <code>del</code> Keyword
+The del keyword is used to delete objects, and since everything is an object in Python, the del keyword can be used to delete variables, lists, <u>parts of a list</u>, etc.
+```python
+lst = [1, 2, 3, 4, 5, 6, 7, 8]
+k = 2
+del 
+```
