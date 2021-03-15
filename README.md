@@ -152,3 +152,20 @@ matrix = [[0 for i in range(m)] for j in range(m)]
 
 alphabet = dict([(chr(i), i-96) for i in range(97, 123)])
 ```
+
+---
+### Zip Zip Zip
+The <code>zip()</code> function takes iterables (can be zero or more), aggregates them in a tuple, and returns them
+```python
+# Mathching ith item of one list with ith item of another list
+team1 = ['Jane', 'Bob', 'Peter']
+team2 = ['Oscar', 'Lidia', 'Ann']
+print([[team1[i], team2[i]] for i in range(len(team1))])    # [['Jane', 'Oscar'], ['Bob', 'Lidia'], ['Peter', 'Ann']]
+
+# Using zip()
+print(list(zip(team1, team2)))                              # [('Jane', 'Oscar'), ('Bob', 'Lidia'), ('Peter', 'Ann')]
+
+# Using zip() powerfully
+team3 = ['Harry', 'Hermione', 'Ron']
+print(list(zip(team1, team2, team3)))                       # [('Jane', 'Oscar', 'Harry'), ('Bob', 'Lidia', 'Hermione'), ('Peter', 'Ann', 'Ron')]
+```
