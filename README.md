@@ -108,5 +108,6 @@ The del keyword is used to delete objects, and since everything is an object in 
 ```python
 lst = [1, 2, 3, 4, 5, 6, 7, 8]
 k = 2
-del 
+del lst[k-1::k]    # deletes every second item in lst
+print(lst)         # [1, 3, 5, 7]
 ```
