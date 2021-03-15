@@ -104,7 +104,7 @@ def twoTeams(students):
 
 ---
 ### <code>del</code> Keyword
-The del keyword is used to delete objects, and since everything is an object in Python, the del keyword can be used to delete variables, lists, <u>parts of a list</u>, etc.
+The del keyword is used to delete objects, and since everything is an object in Python, the del keyword can be used to delete variables, lists, parts of a list, etc.
 ```python
 lst = [1, 2, 3, 4, 5, 6, 7, 8]
 k = 2
