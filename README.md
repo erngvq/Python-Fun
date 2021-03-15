@@ -123,5 +123,15 @@ def getPoints(answers, p):
     for i, ans in enumerate(answers):
         res += questionPoints(i, ans)
     return res
+
 print(getPoints([True, True, False, True], 2))    # returns 5
+```
+We can also <strong>sort</strong> using lambda functions, as shown in the example above
+```python
+def sortStudents(students):
+    students.sort(key=lambda name: name.split()[-1])
+    return students
+
+students = ['John Smith', 'Jacky Mon Simonoff', 'Lucy Smith', 'Angela Zimonova']
+print(sortStudents(students))
 ```
