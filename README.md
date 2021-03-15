@@ -111,3 +111,14 @@ k = 2
 del lst[k-1::k]    # deletes every second item in lst
 print(lst)         # [1, 3, 5, 7]
 ```
+
+### Lambda Functions + Enumerate
+```python
+def getPoints(answers, p):
+    questionPoints = lambda i, ans: (i+1)*ans - p*(not(ans))
+    res = 0
+    for i, ans in enumerate(answers):
+        res += questionPoints(i, ans)
+    return res
+print(getPoints([True, True, False, True], 2))    # returns 5
+```
