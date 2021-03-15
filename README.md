@@ -151,5 +151,4 @@ matrix = [[0 for i in range(m)] for j in range(m)]
 # ASCII value of lowercase alphabets: [97:123)
 
 alphabet = dict([(chr(i), i-96) for i in range(97, 123)])
-print(alphabet)
 ```
