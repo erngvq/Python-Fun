@@ -113,7 +113,9 @@ print(lst)         # [1, 3, 5, 7]
 ```
 
 ---
-### Lambda Functions + Enumerate
+### Lambda Functions
+A lambda function is a small anonymous function that can take any number of arguments, but can only have one expression\
+However, the power of lambda is better shown when you use them as an anonymous function inside another function, as shown <a href="https://www.w3schools.com/python/python_lambda.asp" target="_blank"><span>here</span></a>
 ```python
 def getPoints(answers, p):
     questionPoints = lambda i, ans: (i+1)*ans - p*(not(ans))
