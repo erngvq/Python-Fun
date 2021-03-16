@@ -197,3 +197,12 @@ denominators = [2, 3, 4, 5, 6]
 # In order to use reduce(), the functools module must be invoked
 print(functools.reduce(lambda a, b: a * b / gcd(a, b), denominators))    # returns 60
 ```
+
+---
+### Counter Class
+Special type of object data-set (provided with the collections module in Python3) which is used to count hashable objects
+```python
+from collections import Counter
+text = '$~NmiNmim$/NVeirp@dlzrCCCCfFfQQQ'
+print(Counter(text).most_common(1)[0][0])    # returns C
+```
