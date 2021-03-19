@@ -12,7 +12,7 @@
 
 ---
 ### <code>for-else</code> Loop
-Whatever code is in <code>else</code> clause will execute if the for-loop executes without `breaking`
+Whatever code is in <code>else</code> clause will execute if the for-loop executes without breaking.
 ```python
 for i in range(0, 10, 2):
     if i % 2 == 1:
@@ -48,7 +48,7 @@ def isWordPalindrome(word):
 
 ---
 ### <code>ord()</code> Function
-The <code>ord()</code> function returns an integer representing the Unicode character (i.e., it is the inverse of the <code>chr()</code> function)
+The <code>ord()</code> function returns an integer representing the Unicode character (i.e., it is the inverse of the <code>chr()</code> function).
 ```python
 print(ord('5'))    # 53
 print(ord('A'))    # 65
@@ -57,7 +57,7 @@ print(ord('$'))    # 36
 
 ---
 ### enumerate() Method
-Adds a counter to an iterable and returns it in a form of enumerate object
+Adds a counter to an iterable and returns it in a form of enumerate object.
 ```python
 lst = ['Barry', 'Allen', 'Flash']
 stg = 'Zoom'
@@ -72,7 +72,7 @@ print(list(objstg))    # [(0, 'Z'), (1, 'o'), (2, 'o'), (3, 'm')]
 ---
 ### <code>format()</code> Method
 Formats the specified value(s) and insert them inside the string's placeholder (defined using curly brackets)\
-Inside the placeholders we can add a <a href="https://www.w3schools.com/python/ref_string_format.asp" target="_blank"><span>formatting type</span></a> to format the results
+Inside the placeholders we can add a <a href="https://www.w3schools.com/python/ref_string_format.asp" target="_blank"><span>formatting type</span></a> to format the results.
 ```python
 txt1 = 'My name is {fname} and I am {age}.'.format(fname='Harry Potter', age=16)
 txt2 = 'My favorite professor is {0} and he is probably more than {1} years old.'.format('Albus Dumbledore', 100)
@@ -81,7 +81,7 @@ txt3 = 'My best friends are {} and {}.'.format('Hermione Granger', 'Ron Weasley'
 
 ---
 ### Lists Concatenation
-The <code>extend()</code> method takes an iterable such as list, tuple, or string, and modifies the original list (it does not return any value)
+The <code>extend()</code> method takes an iterable such as list, tuple, or string, and modifies the original list (it does not return any value).
 ```python
 def listsConcatenation(lst1, lst2):
     res = lst1
@@ -91,7 +91,7 @@ def listsConcatenation(lst1, lst2):
 
 ---
 ### <code>for-else</code> List Comprehension
-When using both <code>for</code> and <code>else</code> in a list comprehension, the rearrangement changes, as shown in the example below
+When using both <code>for</code> and <code>else</code> in a list comprehension, the rearrangement changes, as shown in the example below.
 ```python
 def twoTeams(students):
     return sum([students[i] if i % 2 == 0 else students[i] * -1 for i in range(len(students))])
@@ -114,8 +114,7 @@ print(lst)         # [1, 3, 5, 7]
 
 ---
 ### Lambda Functions
-A lambda function is a small anonymous function that can take any number of arguments, but can only have one expression\
-However, the power of lambda is better shown when you use them as an anonymous function inside another function, as shown <a href="https://www.w3schools.com/python/python_lambda.asp" target="_blank"><span>here</span></a>
+A lambda function is a small anonymous function that can take any number of arguments, but can only have one expression. However, the power of lambda is better shown when you use them as an anonymous function inside another function, as shown <a href="https://www.w3schools.com/python/python_lambda.asp" target="_blank"><span>here</span></a>.
 ```python
 def getPoints(answers, p):
     questionPoints = lambda i, ans: (i+1)*ans - p*(not(ans))
@@ -126,7 +125,7 @@ def getPoints(answers, p):
 
 print(getPoints([True, True, False, True], 2))    # returns 5
 ```
-We can also <strong>sort</strong> using lambda functions, as shown in the example above
+We can also <strong>sort</strong> using lambda functions, as shown in the following example.
 ```python
 def sortStudents(students):
     students.sort(key=lambda name: name.split()[-1])
@@ -138,7 +137,7 @@ print(sortStudents(students))
 
 ---
 ### Matrix Initialization
-To declare a multidimensional list of zeroes in Python, it is necessary to use a list comprehension, as shown below
+To declare a multidimensional list of zeroes in Python, it is necessary to use a list comprehension, as shown below.
 ```python
 m = 3
 matrix = [[0 for i in range(m)] for j in range(m)]
@@ -155,7 +154,7 @@ alphabet = dict([(chr(i), i-96) for i in range(97, 123)])
 
 ---
 ### Zip Zip Zip
-The <code>zip()</code> function takes iterables (can be zero or more), aggregates them in a tuple, and returns them
+The <code>zip()</code> function takes iterables (can be zero or more), aggregates them in a tuple, and returns them.
 ```python
 # Mathching ith item of one list with ith item of another list
 team1 = ['Jane', 'Bob', 'Peter']
@@ -178,7 +177,7 @@ print(groupIfDiff(['A', 'C', 'G', 'C', 'A', 'T'], ['T', 'A', 'G', 'G', 'C', 'A']
 ```
 ---
 ### Map, Filter, Reduce
-The <code>map()</code> function returns a map object (which is an iterator) of the results after applying the given function to each item of a given iterable
+The <code>map()</code> function returns a map object (which is an iterator) of the results after applying the given function to each item of a given iterable.
 ```python
 # This script strips the last digit of each integer in the given list
 lst = [42, 239, 365, 50]
@@ -186,7 +185,7 @@ def fix(x):
     return x // 10
 print(list(map(fix, result)))    # returns [4, 23, 36, 5]
 ```
-The <code>filter()</code> function filters the given sequence with the help of a function that tests each element in the sequence to be true or not
+The <code>filter()</code> function filters the given sequence with the help of a function that tests each element in the sequence to be true or not.
 ```python
 # This script filters out those courses whose lengths are seven
 courses = ['Art', 'Finance', 'Business', 'Speech', 'History', 'Writing', 'Statistics']
@@ -194,7 +193,7 @@ def consider(course):
     return len(course) < 7
 print(list(filter(consider, courses)))    # returns ['Art', 'Speech']
 ```
-The <code>reduce()</code> function is used to apply a particular function (first argument) to all of the list elements in the sequence (second argument)
+The <code>reduce()</code> function is used to apply a particular function (first argument) to all of the list elements in the sequence (second argument).
 ```python
 # This script finds the least common denominator for the given list
 from fractions import gcd
@@ -206,7 +205,7 @@ print(functools.reduce(lambda a, b: a * b / gcd(a, b), denominators))    # retur
 
 ---
 ### Counter Class
-Special type of object data-set (provided with the collections module in Python3) which is used to count hashable objects
+Special type of object data-set (provided with the collections module in Python3) which is used to count hashable objects.
 ```python
 from collections import Counter
 text = '$~NmiNmim$/NVeirp@dlzrCCCCfFfQQQ'
