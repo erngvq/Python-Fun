@@ -169,7 +169,13 @@ print(list(zip(team1, team2)))                              # [('Jane', 'Oscar')
 team3 = ['Harry', 'Hermione']
 print(list(zip(team1, team2, team3)))                       # [('Jane', 'Oscar', 'Harry'), ('Bob', 'Lidia', 'Hermione')]
 ```
-
+Given two lists containing nucleotide bases, use the power of the <code>zip()</code> function to write a helper routine that returns those elements in the <code>ith</code> position of first list that match their complement in the  <code>ith</code> position of the second list.
+```python
+complement = {'A':'T', 'T':'A', 'C':'G', 'G':'C'}
+def groupIfDiff(lst1, lst2):
+    return [x for x, y in zip(lst1, lst2) if complement[x] == y]
+print(groupIfDiff(['A', 'C', 'G', 'C', 'A', 'T'], ['T', 'A', 'G', 'G', 'C', 'A']))    # returns ['A', 'C', 'T']
+```
 ---
 ### Map, Filter, Reduce
 The <code>map()</code> function returns a map object (which is an iterator) of the results after applying the given function to each item of a given iterable
