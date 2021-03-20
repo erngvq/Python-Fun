@@ -242,5 +242,5 @@ import functools
 def fibonacciGenerator(n):
     return functools.reduce(lambda a, b: a + [a[-1] + a[-2]], range(n-2), [0, 1])
 
-print(fibonacciGenerator(12))    # [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+print(fibonacciGenerator(12))    # returns [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
 ```
