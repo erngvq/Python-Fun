@@ -214,7 +214,7 @@ print(Counter(text).most_common(1)[0][0])    # returns C
 
 ---
 ### Prime Numbers Logic
-Prime numbers are numbers that only have two factors: 1 and themselves. Therefore, when checking if an arbitrary number <code>n</code> is prime, we can say that <code>n = ab</code>, where <code>a <= b</code>. As such, <code>aa <= ab = n</code>, meaning that we can iterate up to <img src="https://latex.codecogs.com/svg.latex?\sqrt{n}" />\ numbers (starting from 2) when checking if the number is prime via the modulo operator.
+Prime numbers are numbers that only have two factors: 1 and themselves. Therefore, when checking if an arbitrary number <code>n</code> is prime, we can say that <code>n = ab</code>, where <code>a <= b</code>. As such, <code>aa <= ab = n</code>, meaning that we can iterate up to <img src="https://latex.codecogs.com/svg.latex?\small\sqrt{n}" /> numbers (starting from 2) when checking if the number is prime via the modulo operator.
 ```python
 def primesSum(x, y):
     return sum([n for n in range(max(2, x), y + 1) if not 0 in [n % i for i in range(2, int(n**0.5+1))]])
