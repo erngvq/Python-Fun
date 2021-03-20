@@ -211,3 +211,13 @@ from collections import Counter
 text = '$~NmiNmim$/NVeirp@dlzrCCCCfFfQQQ'
 print(Counter(text).most_common(1)[0][0])    # returns C
 ```
+
+---
+### Prime Numbers Logic
+Prime numbers are numbers that only have two factors: 1 and themselves. Therefore, when checking if an arbitrary number <code>n</code> is prime, we can say that <code>n = a*b</code>, where <code>a <= b</code>. As such, <code>a*a <= a*b = n</code>
+
+Special type of object data-set (provided with the collections module in Python3) which is used to count hashable objects.
+```python
+def primesSum(x, y):
+    return sum([n for n in range(max(2, x), y + 1) if not 0 in [n % i for i in range(2, int(n**0.5+1))]])
+```
