@@ -216,6 +216,8 @@ print(Counter(text).most_common(1)[0][0])    # returns C
 ### Prime Numbers Logic
 Prime numbers are numbers that only have two factors: 1 and themselves. Therefore, when checking if an arbitrary number <code>n</code> is prime, we can say that <code>n = ab</code>, where <code>a <= b</code>. As such, <code>aa <= ab = n</code>, meaning that we can iterate up to $\sqrt{n}$ numbers (starting from 2) when checking if the number is prime via the modulo operator.
 
+![\Large x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}]
+
 Special type of object data-set (provided with the collections module in Python3) which is used to count hashable objects.
 ```python
 def primesSum(x, y):
