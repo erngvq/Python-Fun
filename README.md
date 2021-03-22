@@ -221,7 +221,7 @@ def primesSum(x, y):
 ```
 
 ---
-### <code>iter()</code> Function
+### <code>iter()</code> Method
 Creates an object which can be iterated one element at a time, which is useful when coupled with loops.
 ```python
 def calcFinalScore(scores, n):
@@ -243,4 +243,43 @@ def fibonacciGenerator(n):
     return functools.reduce(lambda a, b: a + [a[-1] + a[-2]], range(n-2), [0, 1])
 
 print(fibonacciGenerator(12))    # returns [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+```
+
+---
+### <code>eval()</code> Method & Function Composition
+The <code>eval()</code> function runs the code (which is passed as an argument) within the program.
+```python
+import math
+functions = ['math.sin', 'math.cos', 'lambda x: x * 2', 'lambda x: x ** 2']
+
+def tryFunctions(x, functions):
+    return [eval(f + '(' + str(x) + ')') if 'lambda' not in f else eval(f)(x) for f in functions]
+    
+print(tryFunctions(1, functions))    # returns [0.8414709848078965, 0.5403023058681398, 2, 1]
+```
+Function composition is the technique combining two or more functions in such a way that the output of one function becomes the input of another. The code below computes a simple composition of two functions.
+```python
+import math
+f, g = 'math.log10', 'abs'
+
+def compose(f, g):
+    return lambda x: f(g(x))
+
+def simpleComposition(f, g, x):
+    return compose(eval(f), eval(g))(x)
+
+print(simpleComposition(f, g, -100))    # returns 2.0
+```
+The code that follows does a more complex function composition.
+```python
+import math, functools
+functions = ['math.sin', 'math.cos', 'lambda x: x*2', 'lambda x: x**2']
+
+def compose(functions):
+    return functools.reduce(lambda a, b: lambda x: a(b(x)), functions)
+
+def functionsComposition(functions, x):
+    return compose(map(eval, functions))(x)
+
+print(functionsComposition(functions, 1))    # returns -0.4042391538522658
 ```
