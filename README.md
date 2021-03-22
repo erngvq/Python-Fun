@@ -246,7 +246,7 @@ print(fibonacciGenerator(12))    # returns [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55,
 ```
 
 ---
-### <code>eval()</code> Method & Function Composition
+### <code>eval()</code> Method + Function Composition
 The <code>eval()</code> function runs the code (which is passed as an argument) within the program.
 ```python
 import math
@@ -282,4 +282,36 @@ def functionsComposition(functions, x):
     return compose(map(eval, functions))(x)
 
 print(functionsComposition(functions, 1))    # returns -0.4042391538522658
+```
+
+---
+### Classes, Inheritance, OOP
+```python
+class Counter(object):
+    def __init__(self, value):   
+        self.value = value 
+
+    def increment(self):
+        self.value += 1
+
+    def get(self):
+        return self.value
+    
+    def sign(x):
+        if x > 0:
+            return 'positive'
+        elif x < 0:
+            return 'negative'
+        else:
+            return 'zero'
+
+def countVisitors(beta, k, visitors):
+    counter = Counter(beta)
+    for visitor in visitors:
+        if visitor >= k:
+            counter.increment()
+    return counter.get()
+
+print(countVisitors(beta=22, k=5, visitors=[4, 6, 6, 5, 2, 2, 5]))    # returns 26
+print(Counter.sign(-99))                                              # returns 'negative'
 ```
