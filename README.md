@@ -285,7 +285,7 @@ print(functionsComposition(functions, 1))    # returns -0.4042391538522658
 ```
 
 ---
-### Classes, Inheritance, OOP
+### Python Classes
 ```python
 class Counter(object):
     def __init__(self, value):   
@@ -305,13 +305,71 @@ class Counter(object):
         else:
             return 'zero'
 
+    def __getattr__(self, attribute):
+        return '{} attribute is not defined'.format(attribute) if attribute not in dir(self) else attribute
+
 def countVisitors(beta, k, visitors):
     counter = Counter(beta)
-    for visitor in visitors:
-        if visitor >= k:
-            counter.increment()
+    print(getattr(counter, 'value'))                                  # returns 22
+    print(getattr(counter, 'noval'))                                  # returns 'noval attribute is not defined'
+
+    for visitor in visitors:                                          # getattr() method returns the value of the named
+        if visitor >= k:                                              # attribute of an object; if not found, it returns
+            counter.increment()                                       # the default value provided to the function
     return counter.get()
 
 print(countVisitors(beta=22, k=5, visitors=[4, 6, 6, 5, 2, 2, 5]))    # returns 26
 print(Counter.sign(-99))                                              # returns 'negative'
+```
+
+---
+### Python Inheritance
+```python
+members = [['cat', '2'], ['dog', '2'], ['human', '2']]
+
+class Mammal(object):
+    def __init__(self, age):
+        self.age = age
+    
+    def toHuman(self):
+        return self.age
+    
+    def __str__(self):
+        return "{} y.o. in human age".format(self.toHuman())
+
+class Cat(Mammal):
+    def toHuman(self):
+        if self.age == 0:
+            return 0
+        elif self.age < 3:
+            return 25 // (3 - self.age)
+        else:
+            return 25 + 4 * (self.age - 2)
+
+class Dog(Mammal):
+    def toHuman(self):
+        if self.age == 0:
+            return 0
+        elif self.age == 1:
+            return 15
+        elif self.age == 2:
+            return 24
+        else:
+            return 24 + (self.age - 2) * 4
+
+class Human(Mammal):
+    pass
+
+def toHumanAge(members):
+    species = {
+        'cat': Cat,
+        'dog': Dog,
+        'human': Human
+    }
+    res = []
+    for spec, age in members:
+        res.append(str(species[spec](int(age))))
+    return res
+
+print(toHumanAge(members))    # returns ['25 y.o. in human age', '24 y.o. in human age', '2 y.o. in human age']
 ```
