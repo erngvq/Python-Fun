@@ -296,7 +296,7 @@ class Counter(object):
 
     def get(self):
         return self.value
-    
+
     def sign(x):
         if x > 0:
             return 'positive'
@@ -330,12 +330,12 @@ members = [['cat', '2'], ['dog', '2'], ['human', '2']]
 class Mammal(object):
     def __init__(self, age):
         self.age = age
-    
+
     def toHuman(self):
         return self.age
-    
+
     def __str__(self):
-        return "{} y.o. in human age".format(self.toHuman())
+        return '{} y.o. in human age'.format(self.toHuman())
 
 class Cat(Mammal):
     def toHuman(self):
