@@ -1,0 +1,375 @@
+# Python Fun
+
+### Interesting Methods + Swapping
+<code>n</code> = number, <code>x</code> = base, <code>s</code> = string
+
+* <code>n.bit_length()</code>
+* <code>isinstance(n, int)</code>
+* <code>hex(int(n, x))[2:]</code>
+* <code>s.capitalilze()</code>
+* <code>' '.join(s.split())</code>
+* <code>a, b = b, a</code>
+
+---
+### <code>for-else</code> Loop
+Whatever code is in <code>else</code> clause will execute if the for-loop executes without breaking.
+```python
+for i in range(0, 10, 2):
+    if i % 2 == 1:
+        break
+    print(i)
+else:
+    print('else executed')
+```
+
+---
+### <code>replace()</code> Method
+Returns a copy of the string in which the occurrences of old have been replaced with new, optionally restricting the number of replacements to count &rarr; <code>str.replace(old, new, count)</code>
+```python
+def convertTabs(code, x):
+    return code.replace('\t', ''.join([' ' for i in range(x)]))
+```
+
+---
+### Packing/Unpacking
+```python
+lst = [1, 2, 3, 4]
+a, *lst, d = lst
+print(a, d, lst)    # 1 4 [2, 3]
+```
+
+---
+### Word Palindrome
+Notice how <code>[::-1]</code> reverses the string `word`
+```python
+def isWordPalindrome(word):
+    return word == word[::-1]
+```
+
+---
+### <code>ord()</code> Function
+The <code>ord()</code> function returns an integer representing the Unicode character (i.e., it is the inverse of the <code>chr()</code> function).
+```python
+print(ord('5'))    # 53
+print(ord('A'))    # 65
+print(ord('$'))    # 36
+```
+
+---
+### enumerate() Method
+Adds a counter to an iterable and returns it in a form of enumerate object.
+```python
+lst = ['Barry', 'Allen', 'Flash']
+stg = 'Zoom'
+ 
+objlst = enumerate(lst)
+objstg = enumerate(stg)
+
+print(list(objlst))    # [(0, 'Barry'), (1, 'Allen'), (2, 'Flash')]
+print(list(objstg))    # [(0, 'Z'), (1, 'o'), (2, 'o'), (3, 'm')]
+```
+
+---
+### <code>format()</code> Method
+Formats the specified value(s) and insert them inside the string's placeholder (defined using curly brackets)\
+Inside the placeholders we can add a <a href="https://www.w3schools.com/python/ref_string_format.asp" target="_blank"><span>formatting type</span></a> to format the results.
+```python
+txt1 = 'My name is {fname} and I am {age}.'.format(fname='Harry Potter', age=16)
+txt2 = 'My favorite professor is {0} and he is probably more than {1} years old.'.format('Albus Dumbledore', 100)
+txt3 = 'My best friends are {} and {}.'.format('Hermione Granger', 'Ron Weasley')
+```
+
+---
+### Lists Concatenation
+The <code>extend()</code> method takes an iterable such as list, tuple, or string, and modifies the original list (it does not return any value).
+```python
+def listsConcatenation(lst1, lst2):
+    res = lst1
+    res.extend(lst2)
+    return res
+```
+
+---
+### <code>for-else</code> List Comprehension
+When using both <code>for</code> and <code>else</code> in a list comprehension, the rearrangement changes, as shown in the example below.
+```python
+def twoTeams(students):
+    return sum([students[i] if i % 2 == 0 else students[i] * -1 for i in range(len(students))])
+
+# Another version of this problem using slice-step-parameter
+def twoTeams(students):
+    return sum(students[::2]) - sum(students[1::2])
+```
+<a href="https://forum.freecodecamp.org/t/how-to-use-python-slice-with-the-start-stop-and-step-arguments-explained-with-examples/19202" target="_blank"><span>Python Slice Reference</span></a>
+
+---
+### <code>del</code> Keyword
+The del keyword is used to delete objects, and since everything is an object in Python, the del keyword can be used to delete variables, lists, parts of a list, etc.
+```python
+lst = [1, 2, 3, 4, 5, 6, 7, 8]
+k = 2
+del lst[k-1::k]    # deletes every second item in lst
+print(lst)         # [1, 3, 5, 7]
+```
+
+---
+### Lambda Functions
+A lambda function is a small anonymous function that can take any number of arguments, but can only have one expression. However, the power of lambda is better shown when you use them as an anonymous function inside another function, as shown <a href="https://www.w3schools.com/python/python_lambda.asp" target="_blank"><span>here</span></a>.
+```python
+def getPoints(answers, p):
+    questionPoints = lambda i, ans: (i+1)*ans - p*(not(ans))
+    res = 0
+    for i, ans in enumerate(answers):
+        res += questionPoints(i, ans)
+    return res
+
+print(getPoints([True, True, False, True], 2))    # returns 5
+```
+We can also <strong>sort</strong> using lambda functions, as shown in the following example.
+```python
+def sortStudents(students):
+    students.sort(key=lambda name: name.split()[-1])
+    return students
+
+students = ['John Smith', 'Jacky Mon Simonoff', 'Lucy Smith', 'Angela Zimonova']
+print(sortStudents(students))
+```
+
+---
+### Matrix Initialization
+To declare a multidimensional list of zeroes in Python, it is necessary to use a list comprehension, as shown below.
+```python
+m = 3
+matrix = [[0 for i in range(m)] for j in range(m)]
+```
+
+---
+### Weighted Alphabet Dictionary
+```python
+# ASCII value of uppercase alphabets: [65:91)
+# ASCII value of lowercase alphabets: [97:123)
+
+alphabet = dict([(chr(i), i-96) for i in range(97, 123)])
+```
+
+---
+### Zip Zip Zip
+The <code>zip()</code> function takes iterables (can be zero or more), aggregates them in a tuple, and returns them.
+```python
+# Mathching ith item of one list with ith item of another list
+team1 = ['Jane', 'Bob', 'Peter']
+team2 = ['Oscar', 'Lidia', 'Ann']
+print([[team1[i], team2[i]] for i in range(len(team1))])    # [['Jane', 'Oscar'], ['Bob', 'Lidia'], ['Peter', 'Ann']]
+
+# Using zip()
+print(list(zip(team1, team2)))                              # [('Jane', 'Oscar'), ('Bob', 'Lidia'), ('Peter', 'Ann')]
+
+# Using zip() powerfully
+team3 = ['Harry', 'Hermione']
+print(list(zip(team1, team2, team3)))                       # [('Jane', 'Oscar', 'Harry'), ('Bob', 'Lidia', 'Hermione')]
+```
+Given two lists containing nucleotide bases, use the power of the <code>zip()</code> function to write a helper routine that returns those elements in the <code>ith</code> position of first list that match their complement in the  <code>ith</code> position of the second list.
+```python
+complement = {'A':'T', 'T':'A', 'C':'G', 'G':'C'}
+def groupIfDiff(lst1, lst2):
+    return [x for x, y in zip(lst1, lst2) if complement[x] == y]
+print(groupIfDiff(['A', 'C', 'G', 'C', 'A', 'T'], ['T', 'A', 'G', 'G', 'C', 'A']))    # returns ['A', 'C', 'T']
+```
+---
+### Map, Filter, Reduce
+The <code>map()</code> function returns a map object (which is an iterator) of the results after applying the given function to each item of a given iterable.
+```python
+# This script strips the last digit of each integer in the given list
+lst = [42, 239, 365, 50]
+def fix(x):
+    return x // 10
+print(list(map(fix, result)))    # returns [4, 23, 36, 5]
+```
+The <code>filter()</code> function filters the given sequence with the help of a function that tests each element in the sequence to be true or not.
+```python
+# This script filters out those courses whose lengths are seven
+courses = ['Art', 'Finance', 'Business', 'Speech', 'History', 'Writing', 'Statistics']
+def consider(course):
+    return len(course) < 7
+print(list(filter(consider, courses)))    # returns ['Art', 'Speech']
+```
+The <code>reduce()</code> function is used to apply a particular function (first argument) to all of the list elements in the sequence (second argument).
+```python
+# This script finds the least common denominator for the given list
+from fractions import gcd
+denominators = [2, 3, 4, 5, 6]
+
+# In order to use reduce(), the functools module must be invoked
+print(functools.reduce(lambda a, b: a * b / gcd(a, b), denominators))    # returns 60
+```
+
+---
+### Counter Class
+Special type of object data-set (provided with the collections module in Python3) which is used to count hashable objects.
+```python
+from collections import Counter
+text = '$~NmiNmim$/NVeirp@dlzrCCCCfFfQQQ'
+print(Counter(text).most_common(1)[0][0])    # returns C
+```
+
+---
+### Prime Numbers Logic
+Prime numbers are numbers that only have two factors: 1 and themselves. Therefore, when checking if an arbitrary number <code>n</code> is prime, we can say that <code>n = ab</code>, where <code>a <= b</code>. As such, <code>aa <= ab = n</code>, meaning that we can iterate up to <img src="https://latex.codecogs.com/svg.latex?\sqrt{n}" /> numbers (starting from 2) when checking if the number is prime via the modulo operator. Note that the code below uses this logic to find all the prime numbers in the range <code>[x, y)</code> and them sum them up. 
+```python
+def primesSum(x, y):
+    return sum([n for n in range(max(2, x), y + 1) if not 0 in [n % i for i in range(2, int(n**0.5+1))]])
+```
+
+---
+### <code>iter()</code> Method
+Creates an object which can be iterated one element at a time, which is useful when coupled with loops.
+```python
+def calcFinalScore(scores, n):
+    gen = iter(sorted([i**2 for i in scores], reverse=True))
+    res = 0
+    try:
+        for _ in range(n):
+            res += next(gen)
+    except StopIteration:
+        res //= 5
+    return res
+```
+
+---
+### Fibonacci Generator
+```python
+import functools
+def fibonacciGenerator(n):
+    return functools.reduce(lambda a, b: a + [a[-1] + a[-2]], range(n-2), [0, 1])
+
+print(fibonacciGenerator(12))    # returns [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+```
+
+---
+### <code>eval()</code> Method + Function Composition
+The <code>eval()</code> function runs the code (which is passed as an argument) within the program.
+```python
+import math
+functions = ['math.sin', 'math.cos', 'lambda x: x * 2', 'lambda x: x ** 2']
+
+def tryFunctions(x, functions):
+    return [eval(f + '(' + str(x) + ')') if 'lambda' not in f else eval(f)(x) for f in functions]
+    
+print(tryFunctions(1, functions))    # returns [0.8414709848078965, 0.5403023058681398, 2, 1]
+```
+Function composition is the technique combining two or more functions in such a way that the output of one function becomes the input of another. The code below computes a simple composition of two functions.
+```python
+import math
+f, g = 'math.log10', 'abs'
+
+def compose(f, g):
+    return lambda x: f(g(x))
+
+def simpleComposition(f, g, x):
+    return compose(eval(f), eval(g))(x)
+
+print(simpleComposition(f, g, -100))    # returns 2.0
+```
+The code that follows does a more complex function composition.
+```python
+import math, functools
+functions = ['math.sin', 'math.cos', 'lambda x: x*2', 'lambda x: x**2']
+
+def compose(functions):
+    return functools.reduce(lambda a, b: lambda x: a(b(x)), functions)
+
+def functionsComposition(functions, x):
+    return compose(map(eval, functions))(x)
+
+print(functionsComposition(functions, 1))    # returns -0.4042391538522658
+```
+
+---
+### Python Classes
+```python
+class Counter(object):
+    def __init__(self, value):   
+        self.value = value 
+
+    def increment(self):
+        self.value += 1
+
+    def get(self):
+        return self.value
+
+    def sign(x):
+        if x > 0:
+            return 'positive'
+        elif x < 0:
+            return 'negative'
+        else:
+            return 'zero'
+
+    def __getattr__(self, attribute):
+        return '{} attribute is not defined'.format(attribute) if attribute not in dir(self) else attribute
+
+def countVisitors(beta, k, visitors):
+    counter = Counter(beta)
+    print(getattr(counter, 'value'))                                  # returns 22
+    print(getattr(counter, 'noval'))                                  # returns 'noval attribute is not defined'
+
+    for visitor in visitors:                                          # getattr() method returns the value of the named
+        if visitor >= k:                                              # attribute of an object; if not found, it returns
+            counter.increment()                                       # the default value provided to the function
+    return counter.get()
+
+print(countVisitors(beta=22, k=5, visitors=[4, 6, 6, 5, 2, 2, 5]))    # returns 26
+print(Counter.sign(-99))                                              # returns 'negative'
+```
+
+---
+### Python Inheritance
+```python
+members = [['cat', '2'], ['dog', '2'], ['human', '2']]
+
+class Mammal(object):
+    def __init__(self, age):
+        self.age = age
+
+    def toHuman(self):
+        return self.age
+
+    def __str__(self):
+        return '{} y.o. in human age'.format(self.toHuman())
+
+class Cat(Mammal):
+    def toHuman(self):
+        if self.age == 0:
+            return 0
+        elif self.age < 3:
+            return 25 // (3 - self.age)
+        else:
+            return 25 + 4 * (self.age - 2)
+
+class Dog(Mammal):
+    def toHuman(self):
+        if self.age == 0:
+            return 0
+        elif self.age == 1:
+            return 15
+        elif self.age == 2:
+            return 24
+        else:
+            return 24 + (self.age - 2) * 4
+
+class Human(Mammal):
+    pass
+
+def toHumanAge(members):
+    species = {
+        'cat': Cat,
+        'dog': Dog,
+        'human': Human
+    }
+    res = []
+    for spec, age in members:
+        res.append(str(species[spec](int(age))))
+    return res
+
+print(toHumanAge(members))    # returns ['25 y.o. in human age', '24 y.o. in human age', '2 y.o. in human age']
+```
