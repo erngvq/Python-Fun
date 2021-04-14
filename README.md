@@ -375,4 +375,13 @@ print(toHumanAge(members))    # returns ['25 y.o. in human age', '24 y.o. in hum
 ```
 
 ---
-### Key With Maximum Values
+### Key With Maximum Value
+```python
+dctNoDup = {'A': 1, 'B': 3, 'C': 2}
+dctWithDup = {'A': 1, 'B': 3, 'C': 3}
+
+print(max(dctNoDup, key=dctNoDup.get))                          # prints key with maximum value
+print(max(dctWithDup, key=dctWithDup.get))                      # if duplicates, prints "first" key with maximum value
+
+print(max(zip(dctWithDup.values(), dctWithDup.keys()))[1])      # if duplicates, prints "last" key with maximum value
+```
