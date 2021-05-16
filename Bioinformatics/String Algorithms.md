@@ -53,6 +53,9 @@ def translate(rna):
 
 print(translate(rna))
 ```
+```txt
+MAMAPRTEINSTRING
+```
 
 ---
 ## Finding a Motif in DNA
@@ -72,4 +75,7 @@ def getLocations(s, t):
     return locations
 
 print(getLocations(s, t))
+```
+```txt
+[2, 4, 10]
 ```
