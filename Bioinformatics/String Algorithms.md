@@ -11,6 +11,9 @@ def transcribe(dna):
 
 print(transcribe(dna))
 ```
+```sh
+GAUGGAACUUGACUACGUAAAUU
+```
 
 ---
 ## Translating RNA Into Protein
