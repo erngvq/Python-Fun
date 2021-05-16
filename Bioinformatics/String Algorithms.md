@@ -11,7 +11,7 @@ def transcribe(dna):
 
 print(transcribe(dna))
 ```
-```sh
+```txt
 GAUGGAACUUGACUACGUAAAUU
 ```
 
