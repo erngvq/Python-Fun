@@ -49,3 +49,29 @@ C: 0 0 1 4 2 0 6 1
 G: 1 1 6 3 0 1 0 0
 T: 1 5 0 0 0 1 1 6
 ```
+
+---
+## Overlap Graphs
+
+```python
+hdr, dna = loadFasta('dna_strings.txt')
+dna = [e[1:] for e in dna]
+
+k = 3
+lst = []
+
+for i in range(len(dna)):
+    for j in range(len(dna)):
+        if dna[i] == dna[j]:
+            continue
+        if dna[i][-k:] == dna[j][:k]:
+            lst.append((hdr[i], hdr[j]))
+
+for e in lst:
+    print(e[0] + ' ' + e[1])
+```
+```txt
+Rosalind_0498 Rosalind_2391
+Rosalind_0498 Rosalind_0442
+Rosalind_2391 Rosalind_2323
+```
